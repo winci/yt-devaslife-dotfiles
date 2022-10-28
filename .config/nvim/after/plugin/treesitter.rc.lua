@@ -13,7 +13,8 @@ ts.setup {
   ensure_installed = {
     "tsx",
     "toml",
-    "fish",
+    "zsh",
+    -- "fish",
     "php",
     "json",
     "yaml",

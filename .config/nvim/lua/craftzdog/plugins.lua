@@ -12,6 +12,36 @@ packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
+
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin",
+  })
+
+  use "simrat39/rust-tools.nvim" -- Rust
+  use "Saecki/crates.nvim"
+
+  --  use ({
+  --   "mxsdev/nvim-dap-vscode-js" ({
+  --      "saecki/crates.nvim",
+  --      tag = "v0.3.0",
+  --      requires = { "nvim-lua/plenary.nvim" },
+  --      config = function()
+  --        require("crates").setup {
+  --          null_ls = {
+  --            enabled = true,
+  --            name = "crates.nvim",
+  --          },
+  --        }
+  --      end,
+  --    })
+  --  })
+
+
+  -- Debugging
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
