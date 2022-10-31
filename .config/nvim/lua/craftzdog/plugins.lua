@@ -19,24 +19,24 @@ packer.startup(function(use)
   })
 
   use "simrat39/rust-tools.nvim" -- Rust
-  use "Saecki/crates.nvim"
+  --use "Saecki/crates.nvim"
 
-  --  use ({
-  --   "mxsdev/nvim-dap-vscode-js" ({
-  --      "saecki/crates.nvim",
-  --      tag = "v0.3.0",
-  --      requires = { "nvim-lua/plenary.nvim" },
-  --      config = function()
-  --        require("crates").setup {
-  --          null_ls = {
-  --            enabled = true,
-  --            name = "crates.nvim",
-  --          },
-  --        }
-  --      end,
-  --    })
-  --  })
-
+  use {
+    "mxsdev/nvim-dap-vscode-js",
+    {
+      "Saecki/crates.nvim",
+      tag = "v0.3.0",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("crates").setup {
+          null_ls = {
+            enabled = true,
+            name = "crates.nvim",
+          },
+        }
+      end,
+    }
+  }
 
   -- Debugging
   use "mfussenegger/nvim-dap"
