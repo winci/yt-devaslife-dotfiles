@@ -106,6 +106,24 @@ nvim_lsp.sumneko_lua.setup {
   },
 }
 
+nvim_lsp.rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+  end,
+  settings = {
+    ["rust_analyzer"] = {
+      lens = {
+        enable = true,
+      },
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
+}
+
 nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities
